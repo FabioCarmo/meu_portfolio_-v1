@@ -1,0 +1,9 @@
+meu-portfolio/
+├── index.html          # Estrutura principal
+├── css/
+│   └── style.css       # Estilização visual
+├── js/
+│   └── main.js         # Interatividade
+└── assets/
+    ├── img/            # Sua foto de perfil e capturas de tela dos projetos
+    └── icons/          # Ícones (GitHub, LinkedIn, etc.)
