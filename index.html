@@ -19,10 +19,14 @@
         </nav>
     </header>
 
-    <section id="hero">
+    <section id="hero" class="sobre">
         <h1>Fábio Gonçalves - Engenheiro de Software</h1>
         <p>Construindo soluções em código e infraestrutura.</p>
-        <a href="#projetos" class="btn">Ver Projetos</a>
+        <p><h3>Cursando Engenharia de Software 3º Periodo</h3></p>
+        <button class="btn">Ver Projetos</button>
+        <div class="card-projetos">
+
+        </div>
     </section>
 
     <section id="habilidades">
@@ -31,8 +35,18 @@
             <div class="skill-card">
                 <h3>Linguagens Back-End</h3>
                 <p>Python, C#, JavaScript</p>
+            </div>
+            <div class="skill-card">
                 <h3>Linguagens Front-End</h3>
                 <p>HTML, CSS</p>
+            </div>
+            <div class="skill-card">
+                <h3>Frameworks</h3>
+                <p>web(Django) e DotNet</p>
+            </div>
+            <div class="skill-card">
+                <h3>SGBDs</h3>
+                <p>SqlServer e Mysql</p>
             </div>
             <div class="skill-card">
                 <h3>Infraestrutura & Redes</h3>
@@ -40,32 +54,33 @@
             </div>
             <div class="skill-card">
                 <h3>Cloud</h3>
-                <p>Google Cloud Platform (Fundamentos)</p>
+                <p>Azure</p>
             </div>
         </div>
     </section>
 
     <section id="contato">
-        <h2>Vamos nos Conectar ?</h2>
-        <p>Aberto a oportunidades para iniciar minha carreira como Desenvolvedor Júnior.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/fabiocgs" target="_blank">LinkedIn</a>
-            <a href="https://github.com/fabioCarmo" target="_blank">GitHub</a>
-            <button class="btnMsg">Mensagem</button>
-            <form class="contato escondido">
-                <label></label>
-                <input type="text" class="inputNome" placeholder="Seu Nome">
-                <label></label>
-                <textarea class="inputMsg" placeholder="Deixe sua Mensagem"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+    <h2>Vamos nos Conectar?</h2>
+    <p>Aberto a oportunidades para iniciar minha carreira como Desenvolvedor Júnior.</p>
+    
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/fabiocgs" target="_blank" class="link-social lnk-linkedin">LinkedIn</a>
+        <a href="https://github.com/fabioCarmo" target="_blank" class="link-social lnk-github">GitHub</a>
+        <button class="btnMsg">Mensagem</button>
+    </div>
+
+    <form class="contato escondido">
+        <input type="text" class="inputNome" placeholder="Seu Nome" required>
+        <input type="email" class="inputEmail" placeholder="Seu Email" required>
+        <textarea class="inputMsg" placeholder="Deixe sua Mensagem" rows="5" required></textarea>
+        <button type="submit" class="btnEnviar">Enviar Mensagem</button>
+    </form>
+</section>
 
     <footer>
         <p>&copy; 2026 Fábio Gonçalves. Todos os direitos reservados.</p> 
     </footer>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

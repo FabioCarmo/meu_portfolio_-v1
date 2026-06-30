@@ -47,6 +47,10 @@ footer {
     color: #3498db;
 }
 
+.skill-card {
+    margin-bottom: 10px;
+}
+
 /* Espaçamento de Seções */
 section {
     margin: 100px;
@@ -63,7 +67,12 @@ section {
 
 .social-links a:hover {
     color: #3498db;
+}
 
+.social-links {
+    margin: 0;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */     /* Garante que o corpo ocupe toda a altura da tela */
 }
 
 #hero a {
@@ -81,27 +90,325 @@ section {
     background-color: #2980b9;
 }
 
-#contato h2 {
-    margin-bottom: 15px;
-    color: #1d79b6;
-    text-align: left;
+#hero h3 {
+    margin-bottom: 10px;
 }
 
 #habilidades h2 {
     margin-bottom: 15px;
+    color: #3498db;
+    
 }
 
 .escondido {
     display: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
-button.btnMsg {
+.mostrar {
+    animation: surgir 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    pointer-events: auto;
+    flex-direction: column;
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    gap: 8px;
+}
+
+input {
+    padding: 5px;
+}
+
+textarea {
+    padding: 20px;
+}
+
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+button {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 10px 15px;
     background-color: #3498db;
     color: #fff;
-    font-size: 15px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    border: none;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Container que envolve todos os cards - Ajustado para alinhar 4 cards melhor */
+.card-projetos {
+    display: grid;
+    /* Altera para 4 colunas em telas maiores, ou ajusta automaticamente */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    gap: 24px; /* Espaçamento ligeiramente maior */
+    padding: 30px;
+    max-width: 1400px; /* Limita a largura total do container */
+    margin: 0 auto; /* Centraliza o container na página */
+    box-sizing: border-box;
+}
+
+/* O Card Individual - Tamanho Ajustado */
+.visualizar-projetos {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px; /* Bordas um pouco mais arredondadas */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); /* Sombra mais suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    
+    /* Novo Tamanho: Altura fixa para simetria perfeita */
+    height: 380px; 
+    
+    overflow: hidden;
+}
+
+/* Efeito ao passar o mouse */
+.visualizar-projetos:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo do Cabeçalho com Gradiente */
+.card-header {
+    padding: 25px 24px;
+    color: #ffffff;
+    /* O gradiente é aplicado inline via JS */
+    display: flex;
+    align-items: center;
+    height: 90px; /* Altura fixa para o cabeçalho */
+    box-sizing: border-box;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3rem; /* Título ligeiramente maior */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+/* Corpo do Card */
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between; /* Alinha a descrição no topo e o footer embaixo */
+}
+
+/* Descrição do Projeto */
+.projeto-descricao {
+    margin: 0 0 20px 0;
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+    
+    /* Limita a descrição a 3 linhas com reticências (...) para simetria */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Container do Footer do Card (Tags + Botão) */
+.projeto-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Seção de Tags */
+.tags-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags-projeto span {
+    background-color: #f0f0f0;
+    color: #444444;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px; /* Tags ovais */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Botão do Repositório */
+.btn-repo {
+    display: block; /* Ocupa a largura total do footer */
+    text-align: center;
+    background-color: #24292e; /* Fundo escuro profissional por padrão */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-repo:hover {
+    background-color: #000000;
+    transform: scale(1.02);
+}
+
+
+
+/* Seção Geral de Contato */
+#contato {
+    padding: 60px 20px;
+    background-color: #fff; /* Fundo sutil para destacar a seção */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente todos os filhos diretos */
+    justify-content: center;
+}
+
+#contato h2 {
+    font-size: 2rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+#contato p {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Bloco de Links Sociais e Botão Inicial */
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Estilo padrão para os links e o botão de mensagem */
+.link-social, .btnMsg {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+/* Cores customizadas para identidade visual */
+.lnk-linkedin {
+    background-color: #0073b1;
+    color: #ffffff;
+}
+
+.lnk-linkedin:hover { background-color: #005582; }
+
+.lnk-github {
+    background-color: #24292e;
+    color: #ffffff;
+}
+
+.lnk-github:hover { background-color: #0b0c0d; }
+
+.btnMsg {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.btnMsg:hover { background-color: #1e7e34; }
+
+
+/* --- FORMULÁRIO CENTRALIZADO --- */
+.contato {
+    width: 100%;
+    max-width: 500px; /* Largura ideal e elegante para formulários */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento interno simétrico entre os campos */
+    box-sizing: border-box;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Inputs e Textarea */
+.contato input, 
+.contato textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Efeito de foco nos campos */
+.contato input:focus, 
+.contato textarea:focus {
+    border-color: #0073b1; /* Destaca com o azul corporativo */
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Redimensionamento do campo de texto */
+.contato textarea {
+    resize: vertical; /* Permite aumentar a altura, mas não quebra a largura */
+    min-height: 120px;
+}
+
+/* Botão Enviar dentro do formulário */
+.btnEnviar {
+    background-color: #24292e;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btnEnviar:hover {
+    background-color: #000000;
+}
+
+/* --- CLASSE DE CONTROLE (JavaScript) --- */
+.escondido {
+    opacity: 0;
+    transform: translateY(-10px);
 }
