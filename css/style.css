@@ -278,9 +278,8 @@ button:hover {
 /* Seção Geral de Contato */
 #contato {
     padding: 60px 20px;
-    background-color: #fff; /* Fundo sutil para destacar a seção */
+    background-color: #fff;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centraliza horizontalmente todos os filhos diretos */
@@ -326,7 +325,7 @@ button:hover {
 
 /* Cores customizadas para identidade visual */
 .lnk-linkedin {
-    background-color: #0073b1;
+    background-color: #3498db;
     color: #ffffff;
 }
 
