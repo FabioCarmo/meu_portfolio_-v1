@@ -77,11 +77,18 @@ btnMsg.addEventListener('click', () => {
 });
 
 areaForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const nome = inputNome.value;
-    const email = inputEmail.value;
-    const txt = inputMsg.value;
-    console.log(nome + " " + email + " " + txt);
+    const nome = inputNome.value.trim();
+    const email = inputEmail.value.trim();
+    const txt = inputMsg.value.trim();
 
-    areaForm.reset();
+    // validar se os campos estão vazios
+    if (nome == "" || email == "" || txt == "") {
+        alert("Preencha os campos obrigatórios !");
+        event.preventDefault(); // Não atualiza a página
+        return;
+    }
+
+    alert(`${nome} suas informações foram enviadas com sucesso !`);
+    event.preventDefault(); // Não atualiza a página
+    areaForm.reset(); // Reseta os campos
 })
