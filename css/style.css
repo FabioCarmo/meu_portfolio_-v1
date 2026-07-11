@@ -225,6 +225,7 @@ button:hover {
     /* Limita a descrição a 3 linhas com reticências (...) para simetria */
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
