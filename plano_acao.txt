@@ -3,7 +3,9 @@ meu-portfolio/
 ├── css/
 │   └── style.css       # Estilização visual
 ├── js/
-│   └── main.js         # Interatividade
+│   └── main.js        # Interatividade
+│   └── api.js         # API de Projetos no GitHub
+|
 └── assets/
     ├── img/            # Sua foto de perfil e capturas de tela dos projetos
     └── icons/          # Ícones (GitHub, LinkedIn, etc.)
